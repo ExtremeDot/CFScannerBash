@@ -14,7 +14,7 @@ You have to install the following packages:
 ### 1. clone
 
 ```shell
-git clone https://github.com/MortezaBashsiz/CFScanner.git
+git clone https://github.com/ExtremeDot/CFScannerBash.git
 ```
 
 ### 2. Change directory and make them executable
@@ -31,7 +31,7 @@ In the config file the variables are
 	"Port": "Port which you are using behind Cloudflare on your origin server",
 	"path": "Websocket endpoint like api20",
 	"serverName": "SNI",
-   	"subnetsList": "https://raw.githubusercontent.com/MortezaBashsiz/CFScanner/main/config/cf.local.iplist"
+   	"subnetsList": "https://raw.githubusercontent.com/ExtremeDot/CFScannerBash/main/config/cf.local.iplist"
 }
 ```
 
