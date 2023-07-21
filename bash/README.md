@@ -14,14 +14,14 @@ You have to install the following packages:
 ### 1. clone
 
 ```shell
-[~]>$ git clone https://github.com/MortezaBashsiz/CFScanner.git
+git clone https://github.com/MortezaBashsiz/CFScanner.git
 ```
 
 ### 2. Change directory and make them executable
 
 ```shell
-[~]>$ cd CFScanner/bash
-[~/CFScanner/bash]> chmod +x ../bin/*
+cd CFScanner/bash
+chmod +x ../bin/*
 ```
 In the config file the variables are
 ```shell
@@ -60,18 +60,18 @@ You have following switches to define the arguments
 -u: This is the threshold to upload succeed count. With this option you can filter to show you only the IPs which have successfully upload count more than or equal the amount you specified. This will be AND with -d
 
 ```shell
-[~/CFScanner/bash]>$ bash cfScanner.sh -c <config file> -v <YES/NO> -m <SUBNET/IP> -t <DOWN/UP/BOTH> -p <int> -n <int> -r <int> -s <int> -d <int> -u <int> -f <Custome Subnet File>
+bash cfScanner.sh -c <config file> -v <YES/NO> -m <SUBNET/IP> -t <DOWN/UP/BOTH> -p <int> -n <int> -r <int> -s <int> -d <int> -u <int> -f <Custome Subnet File>
 ```
 #### EXAMPLE: Download test without custom subnet
 
 ```shell
-[~/CFScanner/bash]>$ bash cfScanner.sh -v YES -m SUBNET -t DOWN -p 8 -n 1 -s 100
+bash cfScanner.sh -v YES -m SUBNET -t DOWN -p 8 -n 1 -s 100
 ```
 
 #### EXAMPLE: Upload test without custom subnet
 
 ```shell
-[~/CFScanner/bash]>$ bash cfScanner.sh -v YES -m SUBNET -t UP -p 8 -n 1 -s 100
+bash cfScanner.sh -v YES -m SUBNET -t UP -p 8 -n 1 -s 100
 ```
 
 #### EXAMPLE: Upload and Download test without custom subnet
@@ -79,22 +79,22 @@ You have following switches to define the arguments
 ##### in Linux:
 
 ```shell
-[~/CFScanner/bash]>$ bash cfScanner.sh -v YES -m SUBNET -t BOTH -p 8 -n 1 -s 100
+bash cfScanner.sh -v YES -m SUBNET -t BOTH -p 8 -n 1 -s 100
 ```
 
 #### EXAMPLE: Use your custom subnet file
 
 ```shell
-[~/CFScanner/bash]>$ bash cfScanner.sh -v YES -m SUBNET -t BOTH -p 8 -n 1 -s 100 -f custom.subnets
+bash cfScanner.sh -v YES -m SUBNET -t BOTH -p 8 -n 1 -s 100 -f custom.subnets
 ```
 
 Which the `custom.subnets` is like as follows. You can edit this file and add your subnets in each line.
 
 ```shell
-[~/CFScanner/bash]>$ cat custom.subnets 
+cat custom.subnets 
 5.226.179.0/24
 203.89.5.0/24
-[~/CFScanner/bash]>$
+
 ```
 
 #### EXAMPLE: Use random count in each subnet
@@ -102,7 +102,7 @@ Which the `custom.subnets` is like as follows. You can edit this file and add yo
 In this example script will select only 5 random IPs from each subnet.
 
 ```shell
-[~/CFScanner/bash]>$ bash cfScanner.sh -v YES -m SUBNET -t BOTH -p 8 -n 1 -s 100 -r 5 -f custom.subnets
+bash cfScanner.sh -v YES -m SUBNET -t BOTH -p 8 -n 1 -s 100 -r 5 -f custom.subnets
 ```
 
 #### EXAMPLE: Use upload and download threshold
@@ -110,19 +110,19 @@ In this example script will select only 5 random IPs from each subnet.
 In this example script will try 5 time for each IP and the IPs which have more than or equal 5 successful download AND more than or equal 3 successful upload will be select as OK
 
 ```shell
-[~/CFScanner/bash]>$ bash cfScanner.sh -v YES -m SUBNET -t BOTH -p 8 -n 8 -s 100 -d 5 -u 3 -f custom.subnets
+bash cfScanner.sh -v YES -m SUBNET -t BOTH -p 8 -n 8 -s 100 -d 5 -u 3 -f custom.subnets
 ```
 
 #### EXAMPLE: Use your custom ip file
 
 ```shell
-[~/CFScanner/bash]>$ bash cfScanner.sh -v YES -m IP -t BOTH -p 8 -n 1 -s 100 -f ip.list
+bash cfScanner.sh -v YES -m IP -t BOTH -p 8 -n 1 -s 100 -f ip.list
 ```
 
 Which the `ip.list` is like as follows. You can edit this file and add your IPs in each line.
 
 ```shell
-[~/CFScanner/bash]>$ cat ip.list
+cat ip.list
 23.227.37.250 
 23.227.37.252 
 23.227.37.253 
@@ -139,7 +139,7 @@ Which the `ip.list` is like as follows. You can edit this file and add your IPs 
 23.227.38.4 
 23.227.38.10 
 23.227.38.7 
-[~/CFScanner/bash]>$
+
 ```
 
 ### 4. Result
@@ -147,9 +147,9 @@ Which the `ip.list` is like as follows. You can edit this file and add your IPs 
 It will generate a file in datetime format in the result directory.
 
 ```shell
-[~/CFScanner/bash]>$ ls result/
+ls result/
 20230120-203358-result.cf
-[~/CFScanner/bash]>$
+
 ```
 ## Video Guide
 You can find a video guide for this script on [youtube](https://youtu.be/BKLRAHolhvM "youtube") and [youtube](https://youtu.be/4xJvWYdGuV8 "youtube").
